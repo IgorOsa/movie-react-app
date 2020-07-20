@@ -55,7 +55,7 @@ class MovieItem extends React.Component {
                                         addMovieToWillWatch(movie)
                                     }}
                                 >
-                                    Add Will Watchs
+                                    Add Will Watch
                                 </button>
                             )}
                         <button

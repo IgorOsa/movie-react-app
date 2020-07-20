@@ -23,7 +23,13 @@ class App extends React.Component {
 
   componentDidMount() {
     // console.log("didMount");
+    const updateMoviesWillWatch = JSON.parse(localStorage.getItem('movieWillWatch'));
+
     this.getMovies();
+
+    this.setState({
+      movieWillWatch: updateMoviesWillWatch,
+    });
     // console.log("after then");
   }
 
@@ -66,23 +72,24 @@ class App extends React.Component {
 
   addMovieToWillWatch = (movie) => {
     const updateMoviesWillWatch = [...this.state.movieWillWatch, movie];
-    // updateMoviesWillWatch.push(movie);
 
     this.setState({
       movieWillWatch: updateMoviesWillWatch,
     });
+
+    localStorage.setItem('movieWillWatch', JSON.stringify(updateMoviesWillWatch));
   };
 
   removeMovieFromWillWatch = (movie) => {
-    const updateMoviesWillWatch = this.state.movieWillWatch.filter(function (
-      item
-    ) {
+    const updateMoviesWillWatch = this.state.movieWillWatch.filter(function (item) {
       return item.id !== movie.id;
     });
 
     this.setState({
       movieWillWatch: updateMoviesWillWatch,
     });
+
+    localStorage.setItem('movieWillWatch', JSON.stringify(updateMoviesWillWatch));
   };
 
   updateSortBy = (value) => {
