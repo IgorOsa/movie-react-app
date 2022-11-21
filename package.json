@@ -14,7 +14,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-graceful-image": "^1.2.12",
-    "react-scripts": "3.4.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "predeploy": "npm run build",
